@@ -12,3 +12,9 @@
 
 ## Biểu đồ Gói
 ![Diagram](https://www.planttext.com/api/plantuml/png/SoWkIImgAStDuIf8JCvEJ4zLK0gkB2v9pLLIgEPI08BeqEBK8WNFl9BKehJ4vDHOYA1JQN5cNcfniO9FVdfcCbJG9R4aCIcn6AYcbiiXDIy5P2e0)
+
+## UML
+- [PlantText](https://www.planttext.com/)
+
+## Tài liệu Markdown
+- [MarkDown](https://daringfireball.net/projects/markdown/syntax)
