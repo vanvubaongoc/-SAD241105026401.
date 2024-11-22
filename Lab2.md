@@ -45,7 +45,7 @@
 
 Dưới đây là mã nguồn Java mô phỏng chức năng **Maintain Timecard**:
 
-java
+```java
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -142,3 +142,4 @@ public class MaintainTimecardApp {
         }
     }
 }
+```
