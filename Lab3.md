@@ -9,6 +9,7 @@
 
 **Mô tả:**
 - `BankSystem`: Hệ thống phụ trách xử lý các giao dịch thanh toán với ngân hàng.
+- `PayrollSystem`: Hệ thống tạo phiếu lương cho nhân viên.
 - `PrintService`: Dịch vụ in ấn phiếu lương cho nhân viên.
 - `ProjectManagementDatabase`: Cơ sở dữ liệu quản lý thông tin dự án và timecard của nhân viên.
 
@@ -19,14 +20,14 @@
 
 **Mô tả:**
 - `PrintService`: Hệ thống chịu trách nhiệm in các phiếu lương dựa trên yêu cầu từ PayrollSystem.
-
+- `PayrollSystem`: Hệ thống tạo phiếu lương cho nhân viên.
 ### 1.3. ProjectManagementDatabase Subsystem Context Diagram
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bTgNabcIQL2G69bKNvEJd1bSKbgBbomA3yhDRd4Dp4lCJqr5oZeabYIc9HOdCh5XQ9UGLVN3hTY1Ik5u9ByebI5aCpSrEJ4eXGkt4h11g4ORQKGb5fIb9bQXj2l05BEvP2QbmBo00000F__0m00)
 
 
 **Mô tả:**
 - `ProjectManagementDatabase`: Hệ thống cơ sở dữ liệu quản lý thông tin timecard, phục vụ cho việc tính lương.
-
+- `PayrollSystem`: Hệ thống tạo phiếu lương cho nhân viên.
 ## 2. Analysis Class to Design Element Map
 
 | Analysis Class         | Design Element            |
@@ -57,7 +58,7 @@
 
 
 **Giải thích:**
-- `UI`: Chứa các phần tử giao diện người dùng như form nhập liệu.
-- `Controller`: Quản lý luồng dữ liệu và tương tác với model.
-- `Interface`: Định nghĩa các giao diện cho hệ thống.
+- `UI`:Chứa các phần tử giao diện người dùng như LoginForm, TimecardForm, và MainEmployeeForm.
+- `Controller`: Quản lý luồng dữ liệu và tương tác với model, bao gồm TimecardController và PayrollController.
+- `Interface`:Định nghĩa các giao diện cho hệ thống, như SystemClockInterface.
 - `Model`: Chứa các lớp mô hình dữ liệu như `Paycheck`.
