@@ -62,5 +62,5 @@
 - `Controller`: Quản lý luồng dữ liệu và tương tác với model, bao gồm `TimecardController` và `PayrollController`.
 - `Interface`:Định nghĩa các giao diện cho hệ thống, như `SystemClockInterface`.
 - `Model`: Chứa các lớp mô hình dữ liệu như `Paycheck`
-  Đảm bảo dữ liệu được xử lý đúng cách và phản ánh trạng thái thực tế của hệ thống.
+-  Đảm bảo dữ liệu được xử lý đúng cách và phản ánh trạng thái thực tế của hệ thống.
 
