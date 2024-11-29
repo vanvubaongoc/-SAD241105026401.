@@ -24,3 +24,23 @@ Dựa trên phân tích hệ thống, các ca sử dụng chính bao gồm:
      - `PayrollController`: Điều phối việc xử lý in phiếu lương.
      - `IPrintService`: Giao tiếp với máy in.
      - `PrintService`: Subsystem quản lý việc in phiếu.
++-------------------------------------+
+|           Payroll System            |
+|                                     |
+|   +-----------------------------+   |
+|   | Maintain Timecard           |   |<------ Actor: Employee, Manager
+|   +-----------------------------+   |
+|                                     |
+|   +-----------------------------+   |
+|   | Calculate Payroll           |   |<------ Actor: Manager
+|   +-----------------------------+   |
+|                                     |
+|   +-----------------------------+   |
+|   | Select Payment Method       |   |<------ Actor: Employee
+|   +-----------------------------+   |
+|                                     |
+|   +-----------------------------+   |
+|   | View Pay Statement          |   |<------ Actor: Employee
+|   +-----------------------------+   |
++-------------------------------------+
+
