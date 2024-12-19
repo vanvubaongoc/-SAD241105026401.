@@ -1,7 +1,7 @@
 # BÁO CÁO CUỐI KÌ 
 ## Mentcare: A mental health support system
 
-## 1.Tóm Tắt Bài Toán Mentcare
+#  I.Tóm Tắt Bài Toán Mentcare
 
 Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe tâm thần với yêu cầu cao về độ tin cậy, bảo mật và tuân thủ pháp luật, đồng thời giải quyết xung đột giữa bảo mật thông tin và an toàn bệnh nhân. Đây là một trường hợp điển hình để nghiên cứu các khía cạnh về kỹ thuật yêu cầu, quản lý xung đột và phát triển hệ thống phụ thuộc cao.
 
@@ -95,7 +95,7 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
 7. **Yêu cầu về hệ thống**:
     - Chạy trên máy chủ Linux với giới hạn bộ nhớ 32GB.
     - Hỗ trợ sao lưu và khôi phục dữ liệu khi có sự cố.
-## 2.Phân tích các ca sử dụng
+# II.Phân tích các ca sử dụng
 
 ## Kiến trúc và mô hình triển khai:
 - **Máy khách và máy chủ**:
