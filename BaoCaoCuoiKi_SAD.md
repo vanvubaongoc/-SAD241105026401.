@@ -95,141 +95,117 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
 7. **Yêu cầu về hệ thống**:
     - Chạy trên máy chủ Linux với giới hạn bộ nhớ 32GB.
     - Hỗ trợ sao lưu và khôi phục dữ liệu khi có sự cố.
-# II.Phân tích các ca sử dụng
+## II. Phân Tích Các Ca Sử Dụng
 
-## Kiến trúc và mô hình triển khai:
-- **Máy khách và máy chủ**:
-  + **Máy khách**: Nhân viên y tế và quản trị viên sẽ truy cập hệ thống qua trình duyệt web (Firefox) với giao diện người dùng dưới dạng biểu mẫu, giúp thực hiện các tác vụ nhập liệu và chỉnh sửa hồ sơ.
-  + **Máy chủ**: Đảm nhận việc lưu trữ hồ sơ bệnh nhân và xử lý các yêu cầu từ máy khách. Hệ thống được triển khai trên các máy chủ Linux để đảm bảo tính ổn định và bảo mật.
+### 2.1. Kiến Trúc Đề Xuất
 
----
+Trong hệ thống **Mentcare**, kiến trúc hệ thống cần được xây dựng sao cho có thể hỗ trợ tất cả các chức năng yêu cầu của người dùng (bác sĩ, bệnh nhân, nhân viên y tế). Kiến trúc của hệ thống bao gồm ba lớp chính:
 
-## Các yêu cầu hệ thống:
-
-- **Khả năng vận hành**:
-  + Hệ thống phải duy trì hoạt động ổn định từ 7:00 sáng đến 17:00 chiều từ Thứ Hai đến Thứ Sáu.
-  + Các công tác bảo trì hệ thống sẽ được thực hiện ngoài giờ hành chính (từ 22:00 đến 00:30, hoặc vào sáng Chủ Nhật từ 07:30 đến 11:30).
-
-- **Hiệu suất**:
-  + Hệ thống cần có thời gian phản hồi dưới 2 giây cho các truy vấn bệnh nhân thông thường.
-  + Nếu hệ thống mất thời gian phản hồi trên 2 giây, sẽ có thông báo cho người sử dụng về tình trạng xử lý hiện tại.
-
-- **Bảo mật**:
-  + Hệ thống phải đảm bảo bảo mật tuyệt đối thông tin bệnh nhân, chỉ những nhân viên có quyền mới có thể truy cập dữ liệu.
-  + Hệ thống cần tích hợp cơ chế xác thực hai yếu tố để tăng cường độ an toàn.
-
-- **Quản lý dữ liệu**:
-  + Trước khi lưu trữ, dữ liệu cần được kiểm tra tính hợp lệ, đặc biệt là các trường không có sẵn trong danh sách lựa chọn.
-  + Mọi thông tin cần tuân thủ các quy định về bảo mật và chuẩn mực của hệ thống y tế Mid-Scotland.
-
----
-
-## Kết quả phân tích từng trường hợp sử dụng:
-
-### 1. **Quản lý chăm sóc cá nhân**:
-- **Mô tả ngắn**: Ca sử dụng này cho phép nhân viên lâm sàng thực hiện các thao tác quản lý thông tin bệnh nhân như tạo hồ sơ, sửa đổi dữ liệu và xem lịch sử điều trị.
+- **Lớp giao diện người dùng (UI)**: Đây là lớp mà người dùng trực tiếp tương tác. Các giao diện này sẽ được thiết kế đơn giản, dễ sử dụng, thân thiện với người dùng và tối ưu hóa cho các thiết bị khác nhau (máy tính, điện thoại, máy tính bảng).
   
-- **Quy trình**:
-  - **Quy trình cơ bản**:
-    + Nhân viên lâm sàng đăng nhập vào hệ thống.
-    + Hệ thống hiển thị giao diện tìm kiếm hồ sơ bệnh nhân.
-    + Nhân viên tìm kiếm hoặc chọn bệnh nhân từ danh sách.
-    + Nhân viên xem hoặc cập nhật thông tin bệnh nhân, hoặc tạo hồ sơ mới.
-    + Hệ thống xác nhận và lưu thay đổi vào cơ sở dữ liệu.
-  - **Trường hợp thay thế**:
-    + **AF1**: Nếu không tìm thấy bệnh nhân, hệ thống sẽ thông báo và cho phép tạo hồ sơ mới.
-    + **AF2**: Nếu dữ liệu nhập không hợp lệ, hệ thống sẽ hiển thị lỗi và yêu cầu chỉnh sửa.
+- **Lớp xử lý nghiệp vụ (Business Logic)**: Đây là lớp xử lý tất cả các yêu cầu nghiệp vụ như đăng nhập, tạo hồ sơ bệnh nhân, theo dõi tình trạng sức khỏe, cảnh báo tình trạng bất thường, và các báo cáo liên quan đến bệnh nhân.
 
-- **Yêu cầu đặc biệt**:
-  + Cần xác thực thông tin đăng nhập của nhân viên.
-  + Kiểm tra tính hợp lệ của dữ liệu nhập vào, bao gồm định dạng và tính chính xác.
+- **Lớp cơ sở dữ liệu (Database)**: Lớp này sẽ lưu trữ toàn bộ thông tin bệnh nhân, lịch sử điều trị, các chỉ số sức khỏe, thuốc và phương pháp điều trị, lịch khám bệnh nhân, v.v. Dữ liệu cần được lưu trữ an toàn, có khả năng phục hồi nhanh chóng và đảm bảo tính bảo mật cao.
 
-- **Điều kiện tiên quyết**:
-  + Nhân viên đã đăng nhập thành công vào hệ thống.
-  + Cơ sở dữ liệu bệnh nhân phải sẵn sàng.
+Kiến trúc này giúp tách biệt các phần của hệ thống, từ đó dễ dàng bảo trì, mở rộng và nâng cấp khi cần thiết.
 
-- **Điều kiện hậu**:
-  + Hồ sơ bệnh nhân được tạo hoặc cập nhật thành công.
-  + Thay đổi được lưu trữ trong cơ sở dữ liệu một cách an toàn.
+### 2.2. Các Cơ Chế Phân Tích
 
-- **Điểm mở rộng**: Tích hợp với hệ thống hồ sơ quốc gia: Khi tạo hoặc chỉnh sửa hồ sơ, thông tin có thể được gửi tới hệ thống hồ sơ bệnh án quốc gia.
+Để phân tích các ca sử dụng, chúng ta sẽ sử dụng phương pháp phân tích theo từng tình huống và kịch bản hành động của người dùng. Mỗi ca sử dụng trong hệ thống **Mentcare** sẽ được phân tích theo các bước sau:
 
-### 2. **Theo dõi tình trạng bệnh nhân**:
-- **Mô tả ngắn**: Hệ thống theo dõi tình trạng bệnh nhân, cảnh báo các vấn đề như bỏ lỡ cuộc hẹn hoặc nguy cơ sức khỏe và thông báo cho nhân viên lâm sàng.
+- **Mô tả tình huống**: Mô tả tình huống hoặc vấn đề mà người dùng (bác sĩ, nhân viên y tế, bệnh nhân) sẽ đối mặt khi sử dụng hệ thống.
+- **Mục tiêu ca sử dụng**: Mục tiêu của ca sử dụng này là gì? Ví dụ: Giúp bác sĩ theo dõi tình trạng sức khỏe bệnh nhân, hay giúp bệnh nhân đặt lịch khám.
+- **Các bước thực hiện**: Mô tả chi tiết các bước người dùng sẽ thực hiện trong hệ thống để hoàn thành tác vụ.
+- **Các yêu cầu**: Xác định các yêu cầu về chức năng, bảo mật, hiệu suất cho mỗi ca sử dụng.
+- **Dữ liệu đầu vào và đầu ra**: Các dữ liệu hệ thống yêu cầu từ người dùng và dữ liệu kết quả mà hệ thống sẽ cung cấp.
 
-- **Quy trình**:
-  - **Quy trình cơ bản**:
-    + Hệ thống kiểm tra tự động hồ sơ bệnh nhân định kỳ.
-    + Nếu phát hiện vấn đề (bỏ lỡ cuộc hẹn hoặc không tuân thủ điều trị), hệ thống gửi cảnh báo.
-    + Nhân viên nhận thông báo qua giao diện hoặc email.
-  - **Trường hợp thay thế**:
-    + **AF1**: Nếu không phát hiện vấn đề, hệ thống không gửi cảnh báo.
-    + **AF2**: Nếu thông tin lịch sử không đầy đủ, hệ thống sẽ thông báo lỗi cho quản trị viên.
+### 2.3. Kết Quả Phân Tích Từng Ca Sử Dụng
 
-- **Yêu cầu đặc biệt**:
-  + Hệ thống phải thực hiện kiểm tra tự động mỗi ngày.
-  + Dữ liệu lịch sử bệnh nhân phải chính xác để đưa ra cảnh báo hợp lý.
+#### 2.3.1. Ca Sử Dụng: Quản Lý Hồ Sơ Bệnh Nhân
 
-- **Điều kiện tiên quyết**:
-  + Hồ sơ bệnh nhân có đủ dữ liệu.
-  + Nhân viên đã được cấp quyền nhận thông báo.
+- **Mô tả tình huống**: Bác sĩ và nhân viên y tế cần tạo, cập nhật và theo dõi hồ sơ bệnh nhân. Họ cần có khả năng tìm kiếm thông tin bệnh nhân để đưa ra quyết định điều trị chính xác.
+  
+- **Mục tiêu ca sử dụng**: Cung cấp công cụ để tạo, chỉnh sửa và tìm kiếm hồ sơ bệnh nhân, giúp bác sĩ theo dõi tình trạng bệnh nhân và các phương pháp điều trị.
 
-- **Điều kiện hậu**:
-  + Cảnh báo sẽ được gửi tới nhân viên lâm sàng.
-  + Các hành động cần thiết (nếu có) sẽ được thực hiện.
+- **Các bước thực hiện**:
+  1. Bác sĩ đăng nhập vào hệ thống.
+  2. Chọn "Hồ sơ bệnh nhân" từ bảng điều khiển.
+  3. Tìm kiếm bệnh nhân thông qua tên hoặc mã bệnh nhân.
+  4. Cập nhật các thông tin mới về tình trạng bệnh, phương pháp điều trị, kết quả xét nghiệm, thuốc đang sử dụng.
+  5. Lưu các thay đổi và xác nhận.
+  
+- **Các yêu cầu**:
+  - Hệ thống phải hỗ trợ tìm kiếm bệnh nhân một cách nhanh chóng và chính xác.
+  - Cung cấp các trường thông tin rõ ràng để nhập và chỉnh sửa thông tin bệnh nhân.
+  - Mọi thay đổi phải được lưu trữ an toàn và không bị mất dữ liệu.
+  
+- **Dữ liệu đầu vào và đầu ra**:
+  - **Đầu vào**: Tên bệnh nhân, mã bệnh nhân, các thông tin liên quan đến tình trạng sức khỏe và điều trị.
+  - **Đầu ra**: Hồ sơ bệnh nhân được cập nhật, thông báo xác nhận thay đổi.
 
-- **Điểm mở rộng**: Tích hợp với hệ thống quản lý lịch hẹn: Dữ liệu lịch hẹn sẽ được so sánh với hồ sơ bệnh nhân để xác minh sự tuân thủ điều trị.
+#### 2.3.2. Ca Sử Dụng: Cảnh Báo Tình Trạng Sức Khỏe
 
-### 3. **Quản lý giam giữ bắt buộc**:
-- **Mô tả ngắn**: Cập nhật và quản lý thông tin bệnh nhân bị giam giữ tại bệnh viện để tuân thủ các quy định pháp lý.
+- **Mô tả tình huống**: Bác sĩ cần nhận được cảnh báo khi tình trạng sức khỏe của bệnh nhân có dấu hiệu bất thường. Ví dụ, nếu chỉ số huyết áp vượt ngưỡng an toàn hoặc các chỉ số khác có sự thay đổi bất thường.
 
-- **Quy trình**:
-  - **Quy trình cơ bản**:
-    + Nhân viên lâm sàng cập nhật thông tin giam giữ của bệnh nhân.
-    + Hệ thống xác nhận thông tin nhập vào (ngày giam giữ, lý do).
-    + Dữ liệu được lưu trữ trong hệ thống.
-    + Hệ thống sẽ gửi thông báo nhắc nhở về các cuộc kiểm tra định kỳ.
-  - **Trường hợp thay thế**:
-    + **AF1**: Nếu dữ liệu không hợp lệ, hệ thống sẽ yêu cầu sửa chữa và gửi lại.
+- **Mục tiêu ca sử dụng**: Cung cấp cảnh báo kịp thời khi tình trạng sức khỏe của bệnh nhân cần được can thiệp.
 
-- **Yêu cầu đặc biệt**:
-  + Phải tuân thủ các quy định pháp lý về giam giữ bắt buộc.
-  + Đảm bảo bảo mật cao cho thông tin dữ liệu.
+- **Các bước thực hiện**:
+  1. Hệ thống liên tục giám sát các chỉ số sức khỏe của bệnh nhân thông qua các dữ liệu được nhập từ các thiết bị y tế.
+  2. Khi chỉ số bất thường được phát hiện (ví dụ: huyết áp vượt ngưỡng), hệ thống sẽ tự động gửi cảnh báo đến bác sĩ.
+  3. Bác sĩ sẽ nhận được thông báo qua giao diện người dùng và có thể xem chi tiết về tình trạng sức khỏe.
+  4. Bác sĩ quyết định liệu có cần điều chỉnh phương pháp điều trị hay không.
+  
+- **Các yêu cầu**:
+  - Hệ thống phải có khả năng nhận và xử lý dữ liệu từ các thiết bị y tế (ví dụ: máy đo huyết áp, máy đo nhịp tim).
+  - Cảnh báo cần được đưa ra kịp thời và dễ nhận biết.
+  
+- **Dữ liệu đầu vào và đầu ra**:
+  - **Đầu vào**: Dữ liệu từ các thiết bị y tế (huyết áp, nhịp tim, nhiệt độ cơ thể, v.v.).
+  - **Đầu ra**: Thông báo cảnh báo, chi tiết tình trạng bất thường của bệnh nhân.
 
-- **Điều kiện tiên quyết**:
-  + Nhân viên lâm sàng có quyền chỉnh sửa thông tin giam giữ.
-  + Hệ thống phải hoạt động ổn định và có thể truy cập.
+#### 2.3.3. Ca Sử Dụng: Quản Lý Lịch Khám và Hẹn Gặp
 
-- **Điều kiện hậu**:
-  + Thông tin giam giữ được cập nhật chính xác.
-  + Lịch kiểm tra liên quan được lên kế hoạch và nhắc nhở.
+- **Mô tả tình huống**: Bệnh nhân muốn đặt lịch khám với bác sĩ, và bác sĩ cần quản lý các cuộc hẹn với bệnh nhân. Hệ thống cần cung cấp tính năng này để dễ dàng theo dõi và cập nhật các cuộc hẹn.
 
-- **Điểm mở rộng**: Tích hợp với hệ thống báo cáo quản lý: Thông tin giam giữ sẽ được đưa vào các báo cáo hành chính.
+- **Mục tiêu ca sử dụng**: Giúp bệnh nhân dễ dàng đặt lịch khám và giúp bác sĩ quản lý các cuộc hẹn một cách hiệu quả.
 
-### 4. **Báo cáo hành chính**:
-- **Mô tả ngắn**: Tạo các báo cáo ẩn danh về số lượng bệnh nhân, chi phí điều trị, và các chỉ số quản lý.
+- **Các bước thực hiện**:
+  1. Bệnh nhân đăng nhập vào hệ thống và chọn "Đặt lịch khám".
+  2. Chọn bác sĩ và thời gian phù hợp.
+  3. Xác nhận thông tin cuộc hẹn và hệ thống sẽ tự động gửi thông báo nhắc nhở.
+  4. Bác sĩ nhận được thông báo về cuộc hẹn và có thể xác nhận hoặc thay đổi lịch hẹn nếu cần thiết.
+  
+- **Các yêu cầu**:
+  - Hệ thống cần hỗ trợ chức năng đặt lịch khám dễ dàng.
+  - Cần có thông báo tự động cho cả bệnh nhân và bác sĩ về các cuộc hẹn.
+  
+- **Dữ liệu đầu vào và đầu ra**:
+  - **Đầu vào**: Thông tin bệnh nhân, bác sĩ, thời gian cuộc hẹn.
+  - **Đầu ra**: Xác nhận cuộc hẹn, thông báo nhắc nhở cho bệnh nhân và bác sĩ.
 
-- **Quy trình**:
-  - **Quy trình cơ bản**:
-    + Quản trị viên chọn loại báo cáo cần tạo.
-    + Hệ thống thu thập dữ liệu và tạo báo cáo.
-    + Báo cáo được lưu trữ và sẵn sàng để tải xuống hoặc in.
-  - **Trường hợp thay thế**:
-    + **AF1**: Nếu không có đủ dữ liệu, hệ thống sẽ yêu cầu kiểm tra lại.
+#### 2.3.4. Ca Sử Dụng: Quản Lý Thuốc và Phương Pháp Điều Trị
 
-- **Yêu cầu đặc biệt**:
-  + Báo cáo cần được ẩn danh để bảo vệ quyền riêng tư của bệnh nhân.
-  + Thời gian tạo báo cáo không quá 10 giây.
+- **Mô tả tình huống**: Bác sĩ cần theo dõi các phương pháp điều trị và thuốc mà bệnh nhân đang sử dụng. Điều này giúp đảm bảo bệnh nhân được điều trị đúng cách và giảm thiểu sai sót trong việc kê đơn thuốc.
 
-- **Điều kiện tiên quyết**:
-  + Dữ liệu cần thiết đã được ghi nhận đầy đủ trong hệ thống.
-  + Quản trị viên có quyền tạo báo cáo.
+- **Mục tiêu ca sử dụng**: Cung cấp công cụ để bác sĩ dễ dàng quản lý và theo dõi quá trình điều trị của bệnh nhân.
 
-- **Điều kiện hậu**:
-  + Báo cáo được lưu trữ và có sẵn cho sử dụng.
-  + Hệ thống ghi lại lịch sử tạo báo cáo.
+- **Các bước thực hiện**:
+  1. Bác sĩ mở hồ sơ bệnh nhân và chọn tab "Điều trị".
+  2. Cập nhật thông tin về thuốc đang sử dụng và phương pháp điều trị.
+  3. Lưu các thay đổi và hệ thống sẽ tự động theo dõi và cảnh báo nếu có tương tác thuốc hoặc các vấn đề liên quan.
+  
+- **Các yêu cầu**:
+  - Hệ thống phải hỗ trợ bác sĩ theo dõi các thuốc và phương pháp điều trị của bệnh nhân.
+  - Hệ thống phải cung cấp cảnh báo khi phát hiện tương tác thuốc nguy hiểm.
+  
+- **Dữ liệu đầu vào và đầu ra**:
+  - **Đầu vào**: Thông tin thuốc, phương pháp điều trị, thông tin liên quan đến tình trạng sức khỏe.
+  - **Đầu ra**: Cảnh báo tương tác thuốc, thông báo khi bệnh nhân hoàn thành quá trình điều trị.
 
-- **Điểm mở rộng**: Tích hợp với hệ thống quản lý cấp cao: Các báo cáo có thể được chia sẻ trực tiếp với các nhà quản lý cấp cao qua email.
+### 2.4. Kết Luận
+
+Việc phân tích các ca sử dụng là một bước quan trọng trong việc xây dựng hệ thống **Mentcare**, giúp đảm bảo rằng các chức năng của hệ thống đáp ứng đúng nhu cầu thực tế của người dùng. Các ca sử dụng được phân tích và thiết kế sao cho dễ dàng tương tác, bảo mật và hiệu quả trong việc theo dõi, quản lý và điều trị bệnh nhân.
+
 # III. Xác Định Các Phần Tử Thiết Kế
 
 ## 3.1 Giao Diện Người Dùng (User Interface - UI)
