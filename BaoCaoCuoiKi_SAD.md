@@ -230,3 +230,66 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
   + Hệ thống ghi lại lịch sử tạo báo cáo.
 
 - **Điểm mở rộng**: Tích hợp với hệ thống quản lý cấp cao: Các báo cáo có thể được chia sẻ trực tiếp với các nhà quản lý cấp cao qua email.
+# III. Xác Định Các Phần Tử Thiết Kế
+
+## 3.1 Giao Diện Người Dùng (User Interface - UI)
+
+Giao diện người dùng là yếu tố quan trọng để đảm bảo sự tương tác hiệu quả giữa người dùng và hệ thống. Để đảm bảo người dùng, bao gồm bác sĩ, y tá và quản trị viên, có thể sử dụng hệ thống một cách dễ dàng và nhanh chóng, giao diện sẽ được thiết kế như sau:
+
+- **Đơn giản, dễ sử dụng**: Giao diện được thiết kế trực quan, dễ hiểu với những biểu mẫu đơn giản, không có quá nhiều lựa chọn phức tạp, giúp giảm thiểu sai sót trong việc nhập liệu.
+- **Hỗ trợ đa nền tảng**: Hệ thống giao diện sẽ được tối ưu hóa cho cả máy tính để bàn và thiết bị di động, bao gồm cả ứng dụng web, giúp nhân viên y tế có thể làm việc từ bất kỳ đâu, đặc biệt khi làm việc tại các cơ sở y tế di động hoặc thăm khám bệnh nhân tại nhà.
+- **Tính tương tác cao**: Giao diện có khả năng hiển thị thông báo, cảnh báo (như cảnh báo về dị ứng thuốc, lịch hẹn, nguy cơ tự tử) để giúp bác sĩ đưa ra quyết định chính xác và kịp thời.
+- **Quản lý thông tin bệnh nhân**: Mỗi bệnh nhân sẽ có một hồ sơ riêng biệt, bao gồm các thông tin về lịch sử bệnh lý, các lần thăm khám, đơn thuốc, kết quả xét nghiệm và các khuyến nghị y tế.
+- **Phản hồi tức thì**: Giao diện sẽ cung cấp các phản hồi ngay lập tức về các thao tác của người dùng (ví dụ: thông báo khi nhập sai dữ liệu hoặc khi một tác vụ được hoàn thành).
+
+## 3.2 Kiến Trúc Hệ Thống
+
+Kiến trúc hệ thống sẽ được xây dựng để đảm bảo hiệu suất, tính mở rộng và khả năng phục hồi. Hệ thống sẽ có các thành phần chính như sau:
+
+- **Kiến trúc máy khách - máy chủ**:
+  - **Máy khách**: Được thiết kế dưới dạng web app, giúp người dùng có thể truy cập vào hệ thống từ bất kỳ thiết bị nào có trình duyệt internet. 
+  - **Máy chủ**: Sử dụng các máy chủ mạnh mẽ và bảo mật cao để xử lý các yêu cầu từ máy khách, lưu trữ và quản lý dữ liệu, và đảm bảo sự đồng bộ hóa giữa các thành phần của hệ thống.
+  - **Cơ sở dữ liệu**: Sử dụng cơ sở dữ liệu quan hệ (RDBMS) như MySQL hoặc PostgreSQL để quản lý hồ sơ bệnh nhân và các thông tin liên quan. Dữ liệu sẽ được lưu trữ một cách có cấu trúc để dễ dàng truy vấn, bảo trì và sao lưu.
+
+- **Kiến trúc phân tầng**:
+  - **Tầng trình diễn**: Cung cấp giao diện người dùng và xử lý các yêu cầu tương tác từ người dùng.
+  - **Tầng logic**: Chứa các thuật toán xử lý và logic nghiệp vụ, bao gồm các chức năng như phân tích hồ sơ bệnh nhân, tạo lịch khám, cảnh báo các tình trạng nguy hiểm.
+  - **Tầng dữ liệu**: Quản lý cơ sở dữ liệu của hệ thống, bao gồm các hồ sơ bệnh nhân, thông tin y tế và các dữ liệu lịch sử.
+
+## 3.3 Bảo Mật Dữ Liệu và Quyền Truy Cập
+
+Bảo mật là yếu tố quan trọng trong thiết kế hệ thống, đặc biệt là đối với hệ thống lưu trữ và xử lý dữ liệu nhạy cảm của bệnh nhân. Các biện pháp bảo mật sẽ được thực hiện như sau:
+
+- **Mã hóa dữ liệu**: Toàn bộ dữ liệu sẽ được mã hóa (AES-256) khi truyền tải và khi lưu trữ để bảo vệ thông tin bệnh nhân khỏi các mối đe dọa từ bên ngoài.
+- **Xác thực và phân quyền**: 
+  - **Xác thực hai yếu tố (2FA)**: Đảm bảo người dùng chỉ có thể đăng nhập vào hệ thống khi có mã xác nhận từ hệ thống, giúp tăng cường bảo mật.
+  - **Role-Based Access Control (RBAC)**: Các quyền truy cập sẽ được phân chia dựa trên vai trò của người dùng (ví dụ: bác sĩ, y tá, quản trị viên). Mỗi người dùng sẽ chỉ có quyền truy cập vào các phần dữ liệu và chức năng phù hợp với vai trò của họ.
+- **Quản lý sự cố bảo mật**: Cần có các quy trình phát hiện và phản ứng với các sự cố bảo mật, bao gồm giám sát và cảnh báo liên tục về các truy cập trái phép hoặc các hoạt động đáng ngờ.
+
+## 3.4 Quản Lý Dữ Liệu và Báo Cáo
+
+- **Dữ liệu bệnh nhân**: Hồ sơ bệnh nhân sẽ được cập nhật và quản lý liên tục, bao gồm các thông tin cá nhân, chẩn đoán, lịch sử điều trị và kết quả xét nghiệm.
+- **Báo cáo y tế**: Hệ thống sẽ hỗ trợ việc tạo ra các báo cáo y tế tự động cho từng bệnh nhân hoặc cho các nhóm bệnh nhân. Báo cáo có thể bao gồm các phân tích tình trạng sức khỏe, các nguy cơ tiềm ẩn, các kết luận về điều trị và các lời khuyên y tế.
+- **Quản lý lịch hẹn**: Hệ thống sẽ cung cấp chức năng theo dõi và quản lý lịch hẹn cho bệnh nhân, giúp nhân viên y tế dễ dàng cập nhật các cuộc hẹn và theo dõi tình trạng của bệnh nhân.
+
+## 3.5 Tính Tương Tác và Tích Hợp
+
+- **API và tích hợp**: Hệ thống sẽ cung cấp các giao diện API để dễ dàng tích hợp với các hệ thống y tế khác như hệ thống chẩn đoán hình ảnh, xét nghiệm, hoặc hệ thống quản lý thuốc của bệnh viện.
+- **Chia sẻ thông tin bệnh nhân**: Hệ thống sẽ cho phép chia sẻ dữ liệu bệnh nhân với các bác sĩ khác hoặc các cơ sở y tế trong mạng lưới chăm sóc sức khỏe, giúp phối hợp điều trị hiệu quả hơn.
+- **Tích hợp với hệ thống quốc gia**: Hệ thống sẽ có khả năng kết nối với các hệ thống quốc gia về quản lý hồ sơ y tế, giúp đồng bộ hóa dữ liệu và cập nhật tình trạng của bệnh nhân một cách kịp thời.
+
+## 3.6 Khả Năng Mở Rộng và Phát Triển
+
+- **Khả năng mở rộng**: Hệ thống sẽ được thiết kế để có thể mở rộng trong tương lai, hỗ trợ thêm các tính năng mới hoặc tích hợp với các công nghệ tiên tiến (ví dụ: trí tuệ nhân tạo trong chẩn đoán bệnh).
+- **Cập nhật phần mềm định kỳ**: Hệ thống sẽ được cập nhật và bảo trì thường xuyên để cải thiện hiệu suất, bổ sung tính năng mới, vá lỗi và cập nhật bảo mật.
+
+## 3.7 Hỗ Trợ Quyết Định Lâm Sàng và Cảnh Báo
+
+- **Hệ thống cảnh báo lâm sàng**: Cảnh báo sẽ được đưa ra tự động nếu có tình huống nguy hiểm, chẳng hạn như nguy cơ dị ứng thuốc, sự tương tác thuốc nguy hiểm, hoặc bệnh nhân có nguy cơ tự tử.
+- **Phân tích tình trạng bệnh nhân**: Dựa trên dữ liệu thu thập được, hệ thống sẽ phân tích tình trạng bệnh nhân và đưa ra các gợi ý về phương pháp điều trị, giúp bác sĩ đưa ra quyết định nhanh chóng và chính xác.
+
+## 3.8 Đào Tạo và Nghiên Cứu
+
+- **Công cụ đào tạo**: Hệ thống sẽ có các công cụ hỗ trợ đào tạo cho nhân viên y tế, giúp họ nắm vững các kỹ thuật chẩn đoán, điều trị và các tiêu chuẩn bảo mật.
+- **Nền tảng nghiên cứu**: Các dữ liệu từ hệ thống sẽ được sử dụng để nghiên cứu và phát triển các phương pháp điều trị mới, giúp nâng cao chất lượng chăm sóc bệnh nhân.
+
