@@ -107,7 +107,7 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
 ## Các yêu cầu hệ thống:
 
 - **Khả năng vận hành**:
-  + Hệ thống phải duy trì hoạt động ổn định từ 08:30 sáng đến 17:00 chiều từ Thứ Hai đến Thứ Sáu.
+  + Hệ thống phải duy trì hoạt động ổn định từ 7:00 sáng đến 17:00 chiều từ Thứ Hai đến Thứ Sáu.
   + Các công tác bảo trì hệ thống sẽ được thực hiện ngoài giờ hành chính (từ 22:00 đến 00:30, hoặc vào sáng Chủ Nhật từ 07:30 đến 11:30).
 
 - **Hiệu suất**:
