@@ -277,7 +277,7 @@ Hệ thống sẽ đưa ra các cảnh báo tự động và hỗ trợ bác sĩ
 
 ## 3.8 Đào Tạo và Nghiên Cứu
 Hệ thống sẽ cung cấp các công cụ đào tạo và hỗ trợ nghiên cứu y tế.
-[Diagram](https://www.planttext.com/plantuml/png/bP0zJWCn48LxIxx3qrPGv08KKGHz6WuGMVjhiHb7tacab2WN83V8WYY2H4S3BYYy5_5Dy1ef2966TkRxvZrxrh6ol5wsKgYSZKLsxViStN3Ce3eKPXoUTlF6Fn8sshyGjk3myPceUAEgf2Y9DM-HtVWtgf47zunXxmzc17kJIBPAawPwmSQqFyOyk7iQiQSeKjsaW7ZWk4wMBRjIsRnPh5h5bR5BAQJuheR9P8gBs-1UKSJ0CVTi-gKKgUK_U2b-jKtcdoQuGZOyd3Hi_06hnlSSdwg3sn7kWdi73JkgCobc9HNfixy0)
+![Diagram](https://www.planttext.com/plantuml/png/bP0zJWCn48LxIxx3qrPGv08KKGHz6WuGMVjhiHb7tacab2WN83V8WYY2H4S3BYYy5_5Dy1ef2966TkRxvZrxrh6ol5wsKgYSZKLsxViStN3Ce3eKPXoUTlF6Fn8sshyGjk3myPceUAEgf2Y9DM-HtVWtgf47zunXxmzc17kJIBPAawPwmSQqFyOyk7iQiQSeKjsaW7ZWk4wMBRjIsRnPh5h5bR5BAQJuheR9P8gBs-1UKSJ0CVTi-gKKgUK_U2b-jKtcdoQuGZOyd3Hi_06hnlSSdwg3sn7kWdi73JkgCobc9HNfixy0)
 
 - **Công cụ đào tạo**: Hệ thống sẽ có các công cụ hỗ trợ đào tạo cho nhân viên y tế, giúp họ nắm vững các kỹ thuật chẩn đoán, điều trị và các tiêu chuẩn bảo mật.
 - **Nền tảng nghiên cứu**: Các dữ liệu từ hệ thống sẽ được sử dụng để nghiên cứu và phát triển các phương pháp điều trị mới, giúp nâng cao chất lượng chăm sóc bệnh nhân.
