@@ -102,13 +102,12 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
 Trong hệ thống **Mentcare**, kiến trúc hệ thống cần được xây dựng sao cho có thể hỗ trợ tất cả các chức năng yêu cầu của người dùng (bác sĩ, bệnh nhân, nhân viên y tế). Kiến trúc của hệ thống bao gồm ba lớp chính:
 
 - **Lớp giao diện người dùng (UI)**: Đây là lớp mà người dùng trực tiếp tương tác. Các giao diện này sẽ được thiết kế đơn giản, dễ sử dụng, thân thiện với người dùng và tối ưu hóa cho các thiết bị khác nhau (máy tính, điện thoại, máy tính bảng).
-![Diagram](https://www.planttext.com/plantuml/png/ZP6zQW9158NxXNs7WrKiV8KWsWS25cbdVyn8TcTbPmnOMwH8eU0Jh5O6KWTs22bcyJtkcpWx6rHM1TjxpldEt3jzgLYkPcdYUonKMOxEWFI7u13SR4G7J6BAr2GMwcGmHGXPxPmOPVNmg3tLARnFp9V078hAF-Uo9UEnx_dUFmkztYCUgbMr4A-sYShlQTVt6jPrpH6kInTKAdyK4jAV8SSRDqNQOh_4QLi-mmzhR4DNuAJNaFi2mTbLN6Vh6Krsb3CxYfZaGSRoo1elHetnUKRbLY0nlpShRYI7TP0ZC4K6INeNsXr8B-ExkbfRzsCHkQy_0000)
+
   
 - **Lớp xử lý nghiệp vụ (Business Logic)**: Đây là lớp xử lý tất cả các yêu cầu nghiệp vụ như đăng nhập, tạo hồ sơ bệnh nhân, theo dõi tình trạng sức khỏe, cảnh báo tình trạng bất thường, và các báo cáo liên quan đến bệnh nhân.
-![Diagram](https://www.planttext.com/plantuml/png/XP4nJWCn44NxbVOEerIao1LG13qL1Ut6sU1L4czOpo9n0WeAaAWeJKGH10KLmYue776FkGdZjRKW58NEyd___nbxhB5ei5qkygmGM3SmE29thIGewH_L00eDgmAhKk4Fu8q0lTrquhGEbxrs4bnmMVbd1LU0P3yxYajcippBivG5ez4X76ploBuZBCZT20bpwSroc6SnCHB7akpJYcSX-wh-WbreubXF688aTm_woy3aroR3qBwpCIQSXQLIZsZ9FGZEiH_1js-AQ3xboZSsLA4mAgaysFUeEwQVyviXNBHar_sc_n5zp9hNdNXJ0_eNFc93rgXpqEGsWbbojoN7ZKirxNxy6m00)
 
 - **Lớp cơ sở dữ liệu (Database)**: Lớp này sẽ lưu trữ toàn bộ thông tin bệnh nhân, lịch sử điều trị, các chỉ số sức khỏe, thuốc và phương pháp điều trị, lịch khám bệnh nhân, v.v. Dữ liệu cần được lưu trữ an toàn, có khả năng phục hồi nhanh chóng và đảm bảo tính bảo mật cao.
-![Diagram](https://www.planttext.com/plantuml/png/ZPAzJiCm4CVtI7c7KqQal406LC48xr2viHLRZJ-8Bn8LOaQ8YKSeJ9tPce4XVH6_2IUdg36YKZVxx_lutV-yyCWwx7MRPyAWmWqKDs5uCHAC73zC0So3OwZe4Pxo3E1AyGgKmNWsJ8iAF7RAD57WTbK1PoZYhH66You9O9ntmlj4SzAQMPddF3l1t8VXhPQmbkDMHnZcdANs-d-W8-fohd5Re-rIYGWdJbHwOYKViFTdAEx2_XlXeG_xJtWSTmYcaOficf1GU5pIL7rxALBCE454RIgG61F3SEF-clExaB9CxAYWk1s_e9rRbWJFGO_1wxEJvTcyTbbUmsHap9HXU8N3EtMYdx8QjpNumuvI5hJn-9b-0000)
+
 
 Kiến trúc này giúp tách biệt các phần của hệ thống, từ đó dễ dàng bảo trì, mở rộng và nâng cấp khi cần thiết.
 
@@ -225,8 +224,7 @@ Giao diện người dùng là yếu tố quan trọng để đảm bảo sự t
 ## 3.2 Kiến Trúc Hệ Thống
 
 Kiến trúc hệ thống sẽ được xây dựng để đảm bảo hiệu suất, tính mở rộng và khả năng phục hồi. Hệ thống sẽ có các thành phần chính như sau:
-![Diagram](https://www.planttext.com/plantuml/png/XP4nJWCn44NxbVOEerIao1LG13qL1Ut6sU1L4czOpo9n0WeAaAWeJKGH10KLmYue776FkGdZjRKW58NEyd___nbxhB5ei5qkygmGM3SmE29thIGewH_L00eDgmAhKk4Fu8q0lTrquhGEbxrs4bnmMVbd1LU0P3yxYajcippBivG5ez4X76ploBuZBCZT20bpwSroc6SnCHB7akpJYcSX-wh-WbreubXF688aTm_woy3aroR3qBwpCIQSXQLIZsZ9FGZEiH_1js-AQ3xboZSsLA4mAgaysFUeEwQVyviXNBHar_sc_n5zp9hNdNXJ0_eNFc93rgXpqEGsWbbojoN7ZKirxNxy6m00)
-
+![Diagram](https://www.planttext.com/plantuml/png/TLAnJiCm5DmZvH-UChL3Vu015JenW41Yw5QbJaeY4ZTrx4WPcJgmWFW0A0mL5HLYGag465pn7_uJdkr0gafTFFZktjqzkvzpdt6H9gxZ4pvbu1shUauZe95yfXxuEMG-ZqFAMu9S4CWthmOCflho7plJAYXYkQ9G0bVLjs6XoMJYEZWbvYLuWvy5vAf-X43Lxv34w2XWlCTt58nRvQbSb40YLIy1ZpbmFE_fbJK9MH6o7UvrX6aZWvF4rlZ3ZyvFqBHwcKAggZLlPX3141tvMUmwhjDaW5xl43gRErLzSaXKVKiYCpdjkexTW6KCmtGNDjKjEa2R30jgDnt_0N9Sn7RlxfOdzaOPT2u4PgIGoA-z6jlSi8UgNXjkALS2YAgM0WcskYOqr0FmBfaeDG4ZpOGFdCat71c84cTpJmzjLs7ojzAX_W5wzHy42la4cNdrcPRUK9JsGngOB_KB)
 - **Kiến trúc máy khách - máy chủ**:
   - **Máy khách**: Được thiết kế dưới dạng web app, giúp người dùng có thể truy cập vào hệ thống từ bất kỳ thiết bị nào có trình duyệt internet. 
   - **Máy chủ**: Sử dụng các máy chủ mạnh mẽ và bảo mật cao để xử lý các yêu cầu từ máy khách, lưu trữ và quản lý dữ liệu, và đảm bảo sự đồng bộ hóa giữa các thành phần của hệ thống.
@@ -241,7 +239,7 @@ Kiến trúc hệ thống sẽ được xây dựng để đảm bảo hiệu su
 
 Bảo mật là yếu tố quan trọng trong thiết kế hệ thống, đặc biệt là đối với hệ thống lưu trữ và xử lý dữ liệu nhạy cảm của bệnh nhân. Các biện pháp bảo mật sẽ được thực hiện như sau:
 
-![Diagram](https://www.planttext.com/plantuml/png/ZPAzJiCm4CVtI7c7KqQal406LC48xr2viHLRZJ-8Bn8LOaQ8YKSeJ9tPce4XVH6_2IUdg36YKZVxx_lutV-yyCWwx7MRPyAWmWqKDs5uCHAC73zC0So3OwZe4Pxo3E1AyGgKmNWsJ8iAF7RAD57WTbK1PoZYhH66You9O9ntmlj4SzAQMPddF3l1t8VXhPQmbkDMHnZcdANs-d-W8-fohd5Re-rIYGWdJbHwOYKViFTdAEx2_XlXeG_xJtWSTmYcaOficf1GU5pIL7rxALBCE454RIgG61F3SEF-clExaB9CxAYWk1s_e9rRbWJFGO_1wxEJvTcyTbbUmsHap9HXU8N3EtMYdx8QjpNumuvI5hJn-9b-0000)
+![Diagram](https://www.planttext.com/plantuml/png/ZPAzJiCm4CVtI7c7KqQal406LC48xr2viHLRZJ-8Bn8LOaQ8YKSeJ9tPce4XVH6_2IUdg36YKZVxx_lutV-yyCWwx7MRPyAWmWqKDs5uCHAC73zC0So3OwZe4Pxo3E1AyGgKmNWsJ8iAF7RAD57WTbK1PoZYhH66You9O9ntmlj4SzAQMPddF3l1t8VXhPQmbkDMHnZcdANs-d-W8-fohd5Re-rIYGWdJbHwOYKViFTdAEx2_XlXeG_xJtWSTmYcaOficf1GU5pIL7rxALBCE454RIgG61F3SEF-clExaB9CxAYWk1s_e9rRbWJFGO_1wxEJvTcyTbbUmsHap9HXU8N3EtMYdx8QjpNumuvI5hJn-9b-0000](https://www.planttext.com/plantuml/png/ZP6xIWGn58RxWRp3prHkiQyWgrQ2Y8A5dMGkwmpCPDRaH9ZIoiBI1v3LIa5MmMg2M8piU-HDDfEiguY5RSwN_tBEH16NfEkAHJobHYBUxUSfrETZ3AwGDSFZPdPOzFS2bsN_9D22RFVXAQSndMwWOssx1m6Irjm4raCygql1ebnGIItYlUKSofexPDOiK9NMNEjWoOadNENVwCxHFXAdsQ2stJC5oppLqatF-Ana4Oj2K8p7szWwaRf5wj0P2cjkePnLulH50J4K6B789_utxQC7UbskwjzneLjhheQYNm8ZdsITF_07onVjLx405VsRE0SvgTzfVfG9tqw78v3Byvh-xJF9HUQljW80))
 - **Mã hóa dữ liệu**: Toàn bộ dữ liệu sẽ được mã hóa (AES-256) khi truyền tải và khi lưu trữ để bảo vệ thông tin bệnh nhân khỏi các mối đe dọa từ bên ngoài.
 - **Xác thực và phân quyền**: 
   - **Xác thực hai yếu tố (2FA)**: Đảm bảo người dùng chỉ có thể đăng nhập vào hệ thống khi có mã xác nhận từ hệ thống, giúp tăng cường bảo mật.
@@ -249,28 +247,37 @@ Bảo mật là yếu tố quan trọng trong thiết kế hệ thống, đặc 
 - **Quản lý sự cố bảo mật**: Cần có các quy trình phát hiện và phản ứng với các sự cố bảo mật, bao gồm giám sát và cảnh báo liên tục về các truy cập trái phép hoặc các hoạt động đáng ngờ.
 
 ## 3.4 Quản Lý Dữ Liệu và Báo Cáo
-
+Quản lý và báo cáo là thành phần quan trọng giúp hệ thống theo dõi và phân tích thông tin bệnh nhân.
+![Diagram](https://www.planttext.com/plantuml/png/SoWkIImgAStDuULApIl9BAbKKF9uk7koGl6nXGf93tUtvsKev6KSNfIdf91Oh52GM989L1MVbfcJYb3lT7XXla8oYAXKA7cuQpzOQMvgIcPoOavyKMf1Vb49Gh4pqDpYXxldAwGytBrU8ISJQ4KfRejIadYvUBcGhLNGrRLJqF0vjg5KeQG8RCJ3tTt96I0prwAOeydBXUe6YCwGXxk03as2ELaJONfA4bW5cYOhe9DByz8LaX_kMbg0x6WbaCiSKlDIm6470000)
 - **Dữ liệu bệnh nhân**: Hồ sơ bệnh nhân sẽ được cập nhật và quản lý liên tục, bao gồm các thông tin cá nhân, chẩn đoán, lịch sử điều trị và kết quả xét nghiệm.
 - **Báo cáo y tế**: Hệ thống sẽ hỗ trợ việc tạo ra các báo cáo y tế tự động cho từng bệnh nhân hoặc cho các nhóm bệnh nhân. Báo cáo có thể bao gồm các phân tích tình trạng sức khỏe, các nguy cơ tiềm ẩn, các kết luận về điều trị và các lời khuyên y tế.
 - **Quản lý lịch hẹn**: Hệ thống sẽ cung cấp chức năng theo dõi và quản lý lịch hẹn cho bệnh nhân, giúp nhân viên y tế dễ dàng cập nhật các cuộc hẹn và theo dõi tình trạng của bệnh nhân.
 
 ## 3.5 Tính Tương Tác và Tích Hợp
-
+Hệ thống sẽ tương tác và tích hợp với các hệ thống y tế khác và cung cấp API cho việc trao đổi thông tin.
+![Diagram](https://www.planttext.com/plantuml/png/bP6nJiCm48RtI7w7KoOO-WfLWGKMnC1U6IUDBIMNK5ygyWJCUOJGAKWH2rCYnE28z_2RS4r4GUh4wBlx_ljENbcIMogpL0HIKRw5yD8r2kpOXY0jHFcXUEpTQlU2i3Fk5Q42yltdDCKPcuq8OYH35OGNTpUWjEzRXB7ENODpb949vjROjIpCx_2r7vw1j1zgJE2nzFqU8NKVN2gvfYOqYoEZ99aSrxQo56SY4C6i1el54iwkVDyLWBop8oRTEsUHGNZWSDJSOErp4KoU_o9upL_jcRrtdTB0oli28Z-yGMgOAk79jGIOwCChO_X4-nGVwwy6VsvbP1LZD7t6Dm00)
 - **API và tích hợp**: Hệ thống sẽ cung cấp các giao diện API để dễ dàng tích hợp với các hệ thống y tế khác như hệ thống chẩn đoán hình ảnh, xét nghiệm, hoặc hệ thống quản lý thuốc của bệnh viện.
 - **Chia sẻ thông tin bệnh nhân**: Hệ thống sẽ cho phép chia sẻ dữ liệu bệnh nhân với các bác sĩ khác hoặc các cơ sở y tế trong mạng lưới chăm sóc sức khỏe, giúp phối hợp điều trị hiệu quả hơn.
 - **Tích hợp với hệ thống quốc gia**: Hệ thống sẽ có khả năng kết nối với các hệ thống quốc gia về quản lý hồ sơ y tế, giúp đồng bộ hóa dữ liệu và cập nhật tình trạng của bệnh nhân một cách kịp thời.
 
 ## 3.6 Khả Năng Mở Rộng và Phát Triển
+Hệ thống sẽ được thiết kế để dễ dàng mở rộng và tích hợp các tính năng mới.
+
+[Diagram](https://www.planttext.com/plantuml/png/TP2nIWGn68JxGDvXs4gBUu4hv0GBxHGix8wONJQ1tR3i_e7RsiBQKaJal48G5ctTO1NnFV8cPbFSgN3b3pFVpFoBZaHBjguuAmnfwf6T1dSBKi7TcH9Anyk0mhZM6KG7QTisAfTTtr5Hxrp7vsUeWtj26zozAPEsM55XygLez4vt4jmRgebgSJsn5OpopoOP6a5wWkU216US_Gt3R7Q4WwlW1bJ-4xr_jP1XVB4mvVTxS8yQkVymvM5CsoOdqp_E7Dcb7wH27Bbf8FrQWlmmLVcwYQFZZWUTSVQxpXxEXGtZngG--Rvbd2rYcVJZ7m00)
 
 - **Khả năng mở rộng**: Hệ thống sẽ được thiết kế để có thể mở rộng trong tương lai, hỗ trợ thêm các tính năng mới hoặc tích hợp với các công nghệ tiên tiến (ví dụ: trí tuệ nhân tạo trong chẩn đoán bệnh).
 - **Cập nhật phần mềm định kỳ**: Hệ thống sẽ được cập nhật và bảo trì thường xuyên để cải thiện hiệu suất, bổ sung tính năng mới, vá lỗi và cập nhật bảo mật.
 
 ## 3.7 Hỗ Trợ Quyết Định Lâm Sàng và Cảnh Báo
+Hệ thống sẽ đưa ra các cảnh báo tự động và hỗ trợ bác sĩ trong việc ra quyết định điều trị.
+[Diagram](https://www.planttext.com/plantuml/png/VLEnJiCm5Dpz5K-POE07610299WGI0nibUk6n29rIlo2r969WG4GFq1034LKB4o948Ch_iD_mhDTseO2YoFLT_Vkpg-R6dc1PJzZN61UGBHbAW5wCeg0Q-ZbxiVlg_tKF2Wub-PPmH3GrXyUH0ed9z-OFTjS0gQskLL9k1rgZFiiLYXn2D6ERLuXauGgeKkdIa4vMOyTS9G4xFGuyXbZszQFXEgQAWTjcv60KvA_ZZqZZNc6QOTdSO5pHchhaOB9RMugDPqIuaYUg5nBFOCUbaEAWOIrpHLDoSn37xIvdveNcLHIyApJYuNKCbUCXKfWRMq3LexZVl0bw5Y5TOWcDpGoXKIQQduJCLzHu52SyO0oqmUfAFEc4a2fMcLugHQG4j-1_gmYnaAXNcmnlQFiscOiGVnL66lXdS0q356FWfFWUIxm2oTa-O-oQ75MkMCS-0L2CnOfdIz4mCBMbHDPN0Ks9pc9fKVmxPJ4egbF0qXiyoZ1lDCZqbvTb4wqkOhOCgyTULUQUk0i-ts7WiFPZstu8SWMzpDq4OAs_Vpng17RZ5MF_cbV)
 
 - **Hệ thống cảnh báo lâm sàng**: Cảnh báo sẽ được đưa ra tự động nếu có tình huống nguy hiểm, chẳng hạn như nguy cơ dị ứng thuốc, sự tương tác thuốc nguy hiểm, hoặc bệnh nhân có nguy cơ tự tử.
 - **Phân tích tình trạng bệnh nhân**: Dựa trên dữ liệu thu thập được, hệ thống sẽ phân tích tình trạng bệnh nhân và đưa ra các gợi ý về phương pháp điều trị, giúp bác sĩ đưa ra quyết định nhanh chóng và chính xác.
 
 ## 3.8 Đào Tạo và Nghiên Cứu
+Hệ thống sẽ cung cấp các công cụ đào tạo và hỗ trợ nghiên cứu y tế.
+[Diagram](https://www.planttext.com/plantuml/png/bP0zJWCn48LxIxx3qrPGv08KKGHz6WuGMVjhiHb7tacab2WN83V8WYY2H4S3BYYy5_5Dy1ef2966TkRxvZrxrh6ol5wsKgYSZKLsxViStN3Ce3eKPXoUTlF6Fn8sshyGjk3myPceUAEgf2Y9DM-HtVWtgf47zunXxmzc17kJIBPAawPwmSQqFyOyk7iQiQSeKjsaW7ZWk4wMBRjIsRnPh5h5bR5BAQJuheR9P8gBs-1UKSJ0CVTi-gKKgUK_U2b-jKtcdoQuGZOyd3Hi_06hnlSSdwg3sn7kWdi73JkgCobc9HNfixy0)
 
 - **Công cụ đào tạo**: Hệ thống sẽ có các công cụ hỗ trợ đào tạo cho nhân viên y tế, giúp họ nắm vững các kỹ thuật chẩn đoán, điều trị và các tiêu chuẩn bảo mật.
 - **Nền tảng nghiên cứu**: Các dữ liệu từ hệ thống sẽ được sử dụng để nghiên cứu và phát triển các phương pháp điều trị mới, giúp nâng cao chất lượng chăm sóc bệnh nhân.
