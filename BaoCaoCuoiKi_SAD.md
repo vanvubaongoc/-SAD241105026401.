@@ -263,14 +263,14 @@ Hệ thống sẽ tương tác và tích hợp với các hệ thống y tế kh
 ## 3.6 Khả Năng Mở Rộng và Phát Triển
 Hệ thống sẽ được thiết kế để dễ dàng mở rộng và tích hợp các tính năng mới.
 
-[Diagram](https://www.planttext.com/plantuml/png/TP2nIWGn68JxGDvXs4gBUu4hv0GBxHGix8wONJQ1tR3i_e7RsiBQKaJal48G5ctTO1NnFV8cPbFSgN3b3pFVpFoBZaHBjguuAmnfwf6T1dSBKi7TcH9Anyk0mhZM6KG7QTisAfTTtr5Hxrp7vsUeWtj26zozAPEsM55XygLez4vt4jmRgebgSJsn5OpopoOP6a5wWkU216US_Gt3R7Q4WwlW1bJ-4xr_jP1XVB4mvVTxS8yQkVymvM5CsoOdqp_E7Dcb7wH27Bbf8FrQWlmmLVcwYQFZZWUTSVQxpXxEXGtZngG--Rvbd2rYcVJZ7m00)
+![Diagram](https://www.planttext.com/plantuml/png/TP2nIWGn68JxGDvXs4gBUu4hv0GBxHGix8wONJQ1tR3i_e7RsiBQKaJal48G5ctTO1NnFV8cPbFSgN3b3pFVpFoBZaHBjguuAmnfwf6T1dSBKi7TcH9Anyk0mhZM6KG7QTisAfTTtr5Hxrp7vsUeWtj26zozAPEsM55XygLez4vt4jmRgebgSJsn5OpopoOP6a5wWkU216US_Gt3R7Q4WwlW1bJ-4xr_jP1XVB4mvVTxS8yQkVymvM5CsoOdqp_E7Dcb7wH27Bbf8FrQWlmmLVcwYQFZZWUTSVQxpXxEXGtZngG--Rvbd2rYcVJZ7m00)
 
 - **Khả năng mở rộng**: Hệ thống sẽ được thiết kế để có thể mở rộng trong tương lai, hỗ trợ thêm các tính năng mới hoặc tích hợp với các công nghệ tiên tiến (ví dụ: trí tuệ nhân tạo trong chẩn đoán bệnh).
 - **Cập nhật phần mềm định kỳ**: Hệ thống sẽ được cập nhật và bảo trì thường xuyên để cải thiện hiệu suất, bổ sung tính năng mới, vá lỗi và cập nhật bảo mật.
 
 ## 3.7 Hỗ Trợ Quyết Định Lâm Sàng và Cảnh Báo
 Hệ thống sẽ đưa ra các cảnh báo tự động và hỗ trợ bác sĩ trong việc ra quyết định điều trị.
-[Diagram](https://www.planttext.com/plantuml/png/VLEnJiCm5Dpz5K-POE07610299WGI0nibUk6n29rIlo2r969WG4GFq1034LKB4o948Ch_iD_mhDTseO2YoFLT_Vkpg-R6dc1PJzZN61UGBHbAW5wCeg0Q-ZbxiVlg_tKF2Wub-PPmH3GrXyUH0ed9z-OFTjS0gQskLL9k1rgZFiiLYXn2D6ERLuXauGgeKkdIa4vMOyTS9G4xFGuyXbZszQFXEgQAWTjcv60KvA_ZZqZZNc6QOTdSO5pHchhaOB9RMugDPqIuaYUg5nBFOCUbaEAWOIrpHLDoSn37xIvdveNcLHIyApJYuNKCbUCXKfWRMq3LexZVl0bw5Y5TOWcDpGoXKIQQduJCLzHu52SyO0oqmUfAFEc4a2fMcLugHQG4j-1_gmYnaAXNcmnlQFiscOiGVnL66lXdS0q356FWfFWUIxm2oTa-O-oQ75MkMCS-0L2CnOfdIz4mCBMbHDPN0Ks9pc9fKVmxPJ4egbF0qXiyoZ1lDCZqbvTb4wqkOhOCgyTULUQUk0i-ts7WiFPZstu8SWMzpDq4OAs_Vpng17RZ5MF_cbV)
+![Diagram](https://www.planttext.com/plantuml/png/VLEnJiCm5Dpz5K-POE07610299WGI0nibUk6n29rIlo2r969WG4GFq1034LKB4o948Ch_iD_mhDTseO2YoFLT_Vkpg-R6dc1PJzZN61UGBHbAW5wCeg0Q-ZbxiVlg_tKF2Wub-PPmH3GrXyUH0ed9z-OFTjS0gQskLL9k1rgZFiiLYXn2D6ERLuXauGgeKkdIa4vMOyTS9G4xFGuyXbZszQFXEgQAWTjcv60KvA_ZZqZZNc6QOTdSO5pHchhaOB9RMugDPqIuaYUg5nBFOCUbaEAWOIrpHLDoSn37xIvdveNcLHIyApJYuNKCbUCXKfWRMq3LexZVl0bw5Y5TOWcDpGoXKIQQduJCLzHu52SyO0oqmUfAFEc4a2fMcLugHQG4j-1_gmYnaAXNcmnlQFiscOiGVnL66lXdS0q356FWfFWUIxm2oTa-O-oQ75MkMCS-0L2CnOfdIz4mCBMbHDPN0Ks9pc9fKVmxPJ4egbF0qXiyoZ1lDCZqbvTb4wqkOhOCgyTULUQUk0i-ts7WiFPZstu8SWMzpDq4OAs_Vpng17RZ5MF_cbV)
 
 - **Hệ thống cảnh báo lâm sàng**: Cảnh báo sẽ được đưa ra tự động nếu có tình huống nguy hiểm, chẳng hạn như nguy cơ dị ứng thuốc, sự tương tác thuốc nguy hiểm, hoặc bệnh nhân có nguy cơ tự tử.
 - **Phân tích tình trạng bệnh nhân**: Dựa trên dữ liệu thu thập được, hệ thống sẽ phân tích tình trạng bệnh nhân và đưa ra các gợi ý về phương pháp điều trị, giúp bác sĩ đưa ra quyết định nhanh chóng và chính xác.
