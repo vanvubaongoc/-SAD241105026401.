@@ -102,10 +102,13 @@ Bài toán yêu cầu thiết kế một hệ thống thông tin sức khỏe t�
 Trong hệ thống **Mentcare**, kiến trúc hệ thống cần được xây dựng sao cho có thể hỗ trợ tất cả các chức năng yêu cầu của người dùng (bác sĩ, bệnh nhân, nhân viên y tế). Kiến trúc của hệ thống bao gồm ba lớp chính:
 
 - **Lớp giao diện người dùng (UI)**: Đây là lớp mà người dùng trực tiếp tương tác. Các giao diện này sẽ được thiết kế đơn giản, dễ sử dụng, thân thiện với người dùng và tối ưu hóa cho các thiết bị khác nhau (máy tính, điện thoại, máy tính bảng).
+![Diagram](https://www.planttext.com/plantuml/png/ZP6zQW9158NxXNs7WrKiV8KWsWS25cbdVyn8TcTbPmnOMwH8eU0Jh5O6KWTs22bcyJtkcpWx6rHM1TjxpldEt3jzgLYkPcdYUonKMOxEWFI7u13SR4G7J6BAr2GMwcGmHGXPxPmOPVNmg3tLARnFp9V078hAF-Uo9UEnx_dUFmkztYCUgbMr4A-sYShlQTVt6jPrpH6kInTKAdyK4jAV8SSRDqNQOh_4QLi-mmzhR4DNuAJNaFi2mTbLN6Vh6Krsb3CxYfZaGSRoo1elHetnUKRbLY0nlpShRYI7TP0ZC4K6INeNsXr8B-ExkbfRzsCHkQy_0000)
   
 - **Lớp xử lý nghiệp vụ (Business Logic)**: Đây là lớp xử lý tất cả các yêu cầu nghiệp vụ như đăng nhập, tạo hồ sơ bệnh nhân, theo dõi tình trạng sức khỏe, cảnh báo tình trạng bất thường, và các báo cáo liên quan đến bệnh nhân.
+![Diagram](https://www.planttext.com/plantuml/png/XP4nJWCn44NxbVOEerIao1LG13qL1Ut6sU1L4czOpo9n0WeAaAWeJKGH10KLmYue776FkGdZjRKW58NEyd___nbxhB5ei5qkygmGM3SmE29thIGewH_L00eDgmAhKk4Fu8q0lTrquhGEbxrs4bnmMVbd1LU0P3yxYajcippBivG5ez4X76ploBuZBCZT20bpwSroc6SnCHB7akpJYcSX-wh-WbreubXF688aTm_woy3aroR3qBwpCIQSXQLIZsZ9FGZEiH_1js-AQ3xboZSsLA4mAgaysFUeEwQVyviXNBHar_sc_n5zp9hNdNXJ0_eNFc93rgXpqEGsWbbojoN7ZKirxNxy6m00)
 
 - **Lớp cơ sở dữ liệu (Database)**: Lớp này sẽ lưu trữ toàn bộ thông tin bệnh nhân, lịch sử điều trị, các chỉ số sức khỏe, thuốc và phương pháp điều trị, lịch khám bệnh nhân, v.v. Dữ liệu cần được lưu trữ an toàn, có khả năng phục hồi nhanh chóng và đảm bảo tính bảo mật cao.
+![Diagram](https://www.planttext.com/plantuml/png/ZPAzJiCm4CVtI7c7KqQal406LC48xr2viHLRZJ-8Bn8LOaQ8YKSeJ9tPce4XVH6_2IUdg36YKZVxx_lutV-yyCWwx7MRPyAWmWqKDs5uCHAC73zC0So3OwZe4Pxo3E1AyGgKmNWsJ8iAF7RAD57WTbK1PoZYhH66You9O9ntmlj4SzAQMPddF3l1t8VXhPQmbkDMHnZcdANs-d-W8-fohd5Re-rIYGWdJbHwOYKViFTdAEx2_XlXeG_xJtWSTmYcaOficf1GU5pIL7rxALBCE454RIgG61F3SEF-clExaB9CxAYWk1s_e9rRbWJFGO_1wxEJvTcyTbbUmsHap9HXU8N3EtMYdx8QjpNumuvI5hJn-9b-0000)
 
 Kiến trúc này giúp tách biệt các phần của hệ thống, từ đó dễ dàng bảo trì, mở rộng và nâng cấp khi cần thiết.
 
@@ -211,6 +214,7 @@ Việc phân tích các ca sử dụng là một bước quan trọng trong vi�
 ## 3.1 Giao Diện Người Dùng (User Interface - UI)
 
 Giao diện người dùng là yếu tố quan trọng để đảm bảo sự tương tác hiệu quả giữa người dùng và hệ thống. Để đảm bảo người dùng, bao gồm bác sĩ, y tá và quản trị viên, có thể sử dụng hệ thống một cách dễ dàng và nhanh chóng, giao diện sẽ được thiết kế như sau:
+![Diagram](https://www.planttext.com/plantuml/png/ZP6zQW9158NxXNs7WrKiV8KWsWS25cbdVyn8TcTbPmnOMwH8eU0Jh5O6KWTs22bcyJtkcpWx6rHM1TjxpldEt3jzgLYkPcdYUonKMOxEWFI7u13SR4G7J6BAr2GMwcGmHGXPxPmOPVNmg3tLARnFp9V078hAF-Uo9UEnx_dUFmkztYCUgbMr4A-sYShlQTVt6jPrpH6kInTKAdyK4jAV8SSRDqNQOh_4QLi-mmzhR4DNuAJNaFi2mTbLN6Vh6Krsb3CxYfZaGSRoo1elHetnUKRbLY0nlpShRYI7TP0ZC4K6INeNsXr8B-ExkbfRzsCHkQy_0000)
 
 - **Đơn giản, dễ sử dụng**: Giao diện được thiết kế trực quan, dễ hiểu với những biểu mẫu đơn giản, không có quá nhiều lựa chọn phức tạp, giúp giảm thiểu sai sót trong việc nhập liệu.
 - **Hỗ trợ đa nền tảng**: Hệ thống giao diện sẽ được tối ưu hóa cho cả máy tính để bàn và thiết bị di động, bao gồm cả ứng dụng web, giúp nhân viên y tế có thể làm việc từ bất kỳ đâu, đặc biệt khi làm việc tại các cơ sở y tế di động hoặc thăm khám bệnh nhân tại nhà.
@@ -221,6 +225,7 @@ Giao diện người dùng là yếu tố quan trọng để đảm bảo sự t
 ## 3.2 Kiến Trúc Hệ Thống
 
 Kiến trúc hệ thống sẽ được xây dựng để đảm bảo hiệu suất, tính mở rộng và khả năng phục hồi. Hệ thống sẽ có các thành phần chính như sau:
+![Diagram](https://www.planttext.com/plantuml/png/XP4nJWCn44NxbVOEerIao1LG13qL1Ut6sU1L4czOpo9n0WeAaAWeJKGH10KLmYue776FkGdZjRKW58NEyd___nbxhB5ei5qkygmGM3SmE29thIGewH_L00eDgmAhKk4Fu8q0lTrquhGEbxrs4bnmMVbd1LU0P3yxYajcippBivG5ez4X76ploBuZBCZT20bpwSroc6SnCHB7akpJYcSX-wh-WbreubXF688aTm_woy3aroR3qBwpCIQSXQLIZsZ9FGZEiH_1js-AQ3xboZSsLA4mAgaysFUeEwQVyviXNBHar_sc_n5zp9hNdNXJ0_eNFc93rgXpqEGsWbbojoN7ZKirxNxy6m00)
 
 - **Kiến trúc máy khách - máy chủ**:
   - **Máy khách**: Được thiết kế dưới dạng web app, giúp người dùng có thể truy cập vào hệ thống từ bất kỳ thiết bị nào có trình duyệt internet. 
@@ -236,6 +241,7 @@ Kiến trúc hệ thống sẽ được xây dựng để đảm bảo hiệu su
 
 Bảo mật là yếu tố quan trọng trong thiết kế hệ thống, đặc biệt là đối với hệ thống lưu trữ và xử lý dữ liệu nhạy cảm của bệnh nhân. Các biện pháp bảo mật sẽ được thực hiện như sau:
 
+![Diagram](https://www.planttext.com/plantuml/png/ZPAzJiCm4CVtI7c7KqQal406LC48xr2viHLRZJ-8Bn8LOaQ8YKSeJ9tPce4XVH6_2IUdg36YKZVxx_lutV-yyCWwx7MRPyAWmWqKDs5uCHAC73zC0So3OwZe4Pxo3E1AyGgKmNWsJ8iAF7RAD57WTbK1PoZYhH66You9O9ntmlj4SzAQMPddF3l1t8VXhPQmbkDMHnZcdANs-d-W8-fohd5Re-rIYGWdJbHwOYKViFTdAEx2_XlXeG_xJtWSTmYcaOficf1GU5pIL7rxALBCE454RIgG61F3SEF-clExaB9CxAYWk1s_e9rRbWJFGO_1wxEJvTcyTbbUmsHap9HXU8N3EtMYdx8QjpNumuvI5hJn-9b-0000)
 - **Mã hóa dữ liệu**: Toàn bộ dữ liệu sẽ được mã hóa (AES-256) khi truyền tải và khi lưu trữ để bảo vệ thông tin bệnh nhân khỏi các mối đe dọa từ bên ngoài.
 - **Xác thực và phân quyền**: 
   - **Xác thực hai yếu tố (2FA)**: Đảm bảo người dùng chỉ có thể đăng nhập vào hệ thống khi có mã xác nhận từ hệ thống, giúp tăng cường bảo mật.
