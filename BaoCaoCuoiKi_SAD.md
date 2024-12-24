@@ -282,3 +282,83 @@ Hệ thống sẽ cung cấp các công cụ đào tạo và hỗ trợ nghiên 
 - **Công cụ đào tạo**: Hệ thống sẽ có các công cụ hỗ trợ đào tạo cho nhân viên y tế, giúp họ nắm vững các kỹ thuật chẩn đoán, điều trị và các tiêu chuẩn bảo mật.
 - **Nền tảng nghiên cứu**: Các dữ liệu từ hệ thống sẽ được sử dụng để nghiên cứu và phát triển các phương pháp điều trị mới, giúp nâng cao chất lượng chăm sóc bệnh nhân.
 
+# IV. Thiết kế hệ thống con
+
+Phần này trình bày chi tiết thiết kế các hệ thống con đã được xác định ở bước phân tích và xác định các phần tử thiết kế. Mỗi hệ thống con đảm nhận một tập hợp chức năng riêng biệt, đảm bảo sự phối hợp giữa các bộ phận trong hệ thống Mentcare.
+
+## 4.1. Hệ thống con quản lý thông tin bệnh nhân
+### Chức năng chính
+- Lưu trữ, cập nhật và quản lý hồ sơ bệnh nhân, bao gồm thông tin cá nhân, chẩn đoán, điều trị và đơn thuốc.
+- Ghi nhận các đánh giá rủi ro và tình trạng bệnh nhân.
+- Hỗ trợ nhập nhận xét tự do từ bác sĩ để xử lý các trường hợp phức tạp.
+- Theo dõi lịch sử khám bệnh và các thay đổi trong hồ sơ bệnh nhân.
+
+### Mục tiêu thiết kế
+- Đảm bảo tính toàn vẹn và an toàn dữ liệu.
+- Dễ dàng truy cập thông tin cho các nhân viên y tế được ủy quyền.
+- Hỗ trợ giao diện người dùng thân thiện với các chức năng tìm kiếm và cập nhật thông tin nhanh chóng.
+
+---
+
+## 4.2. Hệ thống con quản lý cuộc hẹn
+### Chức năng chính
+- Đặt, thay đổi và hủy cuộc hẹn giữa bệnh nhân và bác sĩ.
+- Theo dõi tình trạng các cuộc hẹn và ghi nhận thông tin về bệnh nhân vắng mặt.
+- Gửi thông báo nhắc nhở tự động qua email hoặc tin nhắn.
+
+### Mục tiêu thiết kế
+- Cung cấp lịch trình trực quan cho bác sĩ và bệnh nhân.
+- Tích hợp dễ dàng với các hệ thống lịch bên ngoài như Google Calendar.
+- Đảm bảo thông tin cuộc hẹn được đồng bộ hóa và cập nhật theo thời gian thực.
+
+---
+
+## 4.3. Hệ thống con hỗ trợ chẩn đoán và điều trị
+### Chức năng chính
+- Hiển thị các tác dụng phụ của thuốc và cảnh báo về dị ứng.
+- Theo dõi và đánh giá tình trạng rủi ro tự tử hoặc nguy hiểm của bệnh nhân.
+- Quản lý thông tin bệnh nhân bị giữ (sectioned) và hỗ trợ tuân thủ các quy định pháp lý.
+
+### Mục tiêu thiết kế
+- Hỗ trợ đưa ra quyết định điều trị chính xác và kịp thời.
+- Cung cấp công cụ cảnh báo và nhắc nhở cho nhân viên y tế.
+- Đảm bảo thông tin chẩn đoán và điều trị được cập nhật liên tục.
+
+---
+
+## 4.4. Hệ thống con hỗ trợ nhân viên y tế di động
+### Chức năng chính
+- Cho phép nhân viên y tế tải xuống, cập nhật và đồng bộ hóa hồ sơ bệnh nhân trên các thiết bị di động.
+- Hỗ trợ làm việc ngoại tuyến và tự động đồng bộ khi có kết nối mạng.
+
+### Mục tiêu thiết kế
+- Tăng cường khả năng tiếp cận thông tin trong các tình huống khẩn cấp hoặc khi làm việc tại nhà bệnh nhân.
+- Bảo vệ dữ liệu trên thiết bị di động thông qua các cơ chế mã hóa.
+- Cung cấp giao diện người dùng thân thiện cho các thiết bị di động.
+
+---
+
+## 4.5. Hệ thống con báo cáo
+### Chức năng chính
+- Tạo báo cáo cá nhân hóa cho bác sĩ hoặc báo cáo ẩn danh cho mục đích quản lý và nghiên cứu.
+- Xuất báo cáo dưới các định dạng phổ biến như PDF và Excel.
+
+### Mục tiêu thiết kế
+- Đảm bảo báo cáo được trình bày rõ ràng và phù hợp với nhu cầu người dùng.
+- Tăng cường khả năng tùy chỉnh báo cáo theo các tiêu chí khác nhau.
+- Hỗ trợ các công cụ xuất và in ấn tiện lợi.
+
+---
+
+## 4.6. Hệ thống con bảo mật và kiểm soát truy cập
+### Chức năng chính
+- Quản lý quyền truy cập dựa trên vai trò (Role-Based Access Control).
+- Ghi nhận và giám sát hoạt động của người dùng trong hệ thống.
+- Đảm bảo dữ liệu được mã hóa và chỉ nhân viên được ủy quyền mới có quyền truy cập.
+
+### Mục tiêu thiết kế
+- Đảm bảo an toàn và bảo mật thông tin trong mọi hoạt động của hệ thống.
+- Tuân thủ các quy định pháp luật về bảo mật và quyền riêng tư.
+- Hỗ trợ các cơ chế xác thực mạnh mẽ như xác thực hai yếu tố (2FA).
+
+
